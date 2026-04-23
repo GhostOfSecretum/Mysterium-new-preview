@@ -753,6 +753,10 @@ h3 { font-size: 1.05rem; }
 /* ---- Reveal animation ---- */
 [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
 [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+/* Fallback: always show content if JS doesn't run */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal]:not(.is-visible) { animation: none; }
+}
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {

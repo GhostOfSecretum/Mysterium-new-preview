@@ -49,19 +49,19 @@ export default function App() {
 
   useEffect(() => {
     const revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
+
+    // Immediately show all above-the-fold elements
+    revealEls.forEach((el) => setTimeout(() => el.classList.add("is-visible"), 80));
+
     const observer  = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) e.target.classList.add("is-visible");
         });
       },
-      { threshold: 0.12 },
+      { threshold: 0.05 },
     );
-    revealEls.forEach((el) => {
-      observer.observe(el);
-      // Fallback: ensure visible after 120 ms even if observer doesn't fire
-      setTimeout(() => el.classList.add("is-visible"), 120);
-    });
+    revealEls.forEach((el) => observer.observe(el));
 
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
