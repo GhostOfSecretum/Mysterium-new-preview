@@ -1,11 +1,15 @@
-import { Suspense, lazy, Component } from "react";
+import { Component } from "react";
+import CryptoGridScene from "./scenes/CryptoGridScene.jsx";
+import ChromeLuxuryScene from "./scenes/ChromeLuxuryScene.jsx";
+import ChromeRippleScene from "./scenes/ChromeRippleScene.jsx";
+import DataStreamsScene from "./scenes/DataStreamsScene.jsx";
 import { Canvas } from "@react-three/fiber";
 
 const scenes = {
-  grid:    lazy(() => import("./scenes/CryptoGridScene.jsx")),
-  chrome:  lazy(() => import("./scenes/ChromeLuxuryScene.jsx")),
-  ripple:  lazy(() => import("./scenes/ChromeRippleScene.jsx")),
-  streams: lazy(() => import("./scenes/DataStreamsScene.jsx")),
+  grid: CryptoGridScene,
+  chrome: ChromeLuxuryScene,
+  ripple: ChromeRippleScene,
+  streams: DataStreamsScene,
 };
 
 class SceneErrorBoundary extends Component {
@@ -24,18 +28,16 @@ export default function SceneSwitcher({ activeScene = "grid" }) {
     <div className="scene-shell" aria-hidden="true">
       <SceneErrorBoundary>
         <Canvas
-          dpr={[1, 1.5]}
+          dpr={[1, 2]}
           camera={{ position: [0, 0, 14], fov: 55, near: 0.1, far: 200 }}
           gl={{ antialias: true, alpha: true, powerPreference: "high-performance", failIfMajorPerformanceCaveat: false }}
           onCreated={({ gl }) => {
             gl.setClearColor(0x000000, 0);
           }}
         >
-          <Suspense fallback={null}>
-            <SceneErrorBoundary>
-              <SceneComponent />
-            </SceneErrorBoundary>
-          </Suspense>
+          <SceneErrorBoundary>
+            <SceneComponent />
+          </SceneErrorBoundary>
         </Canvas>
       </SceneErrorBoundary>
     </div>
