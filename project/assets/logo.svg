@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" width="260" height="48">
+  <circle cx="14" cy="24" r="6" fill="#40e0d0"></circle>
+  <circle cx="14" cy="24" r="11" fill="none" stroke="#40e0d0" stroke-opacity="0.35" stroke-width="1"></circle>
+  <text x="34" y="31" font-family="Unbounded, sans-serif" font-weight="700" font-size="16" fill="#d8eaf4" letter-spacing="0.5">
+    Mysterium Tech
+  </text>
+</svg>

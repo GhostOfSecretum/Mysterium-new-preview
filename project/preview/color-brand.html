@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 20px; background: var(--bg-base); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .sw { border-radius: 12px; padding: 14px; height: 96px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.04); }
+  .name { font-family: var(--font-display); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hex { font-family: var(--font-mono); font-size: 11px; opacity: 0.7; }
+</style></head>
+<body>
+<div class="grid">
+  <div class="sw" style="background:#40e0d0; color:#010810"><span class="name">Accent</span><span class="hex">#40E0D0</span></div>
+  <div class="sw" style="background:#1a8fa8; color:#e0f4ff"><span class="name">Accent 2</span><span class="hex">#1A8FA8</span></div>
+  <div class="sw" style="background:#0d6878; color:#e0f4ff"><span class="name">Accent 3</span><span class="hex">#0D6878</span></div>
+  <div class="sw" style="background:#d4a843; color:#010810"><span class="name">Accent Warm</span><span class="hex">#D4A843</span></div>
+  <div class="sw" style="background: linear-gradient(135deg,#1a8fa8,#0d6878); color:#e0f4ff"><span class="name">CTA Gradient</span><span class="hex">135° 1A8FA8 → 0D6878</span></div>
+  <div class="sw" style="background: rgba(64,224,208,0.10); color:#40e0d0; border:1px solid rgba(64,224,208,0.25)"><span class="name">Accent Fill</span><span class="hex">#40E0D0 / 10%</span></div>
+</div>
+</body></html>

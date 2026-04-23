@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px; background: var(--bg-base); display: flex; flex-direction: column; gap: 14px; }
+  .field { display:flex; flex-direction:column; gap: 6px; }
+  label { font-family: var(--font-display); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+  input {
+    border-radius: 10px;
+    border: 1px solid rgba(64,224,208,0.16);
+    background: rgba(255,255,255,0.04);
+    color: var(--text-main);
+    padding: 10px 12px;
+    font-family: var(--font-body); font-size: 14px;
+    outline: none;
+  }
+  input:focus { border-color: rgba(64,224,208,0.4); }
+  .field.focused input { border-color: rgba(64,224,208,0.4); }
+  .row { display:grid; grid-template-columns: 1fr auto; gap: 8px; }
+  button {
+    border: 1px solid rgba(64,224,208,0.28);
+    border-radius: 10px;
+    background: linear-gradient(135deg,#1a8fa8,#0d6878);
+    color: #def7ff;
+    padding: 0 14px;
+    font-family: var(--font-display); font-size: 10px; font-weight: 600;
+    cursor: pointer;
+  }
+</style></head>
+<body>
+<div class="field">
+  <label>Default</label>
+  <input placeholder="Ваш вопрос..." />
+</div>
+<div class="field focused">
+  <label>Focused</label>
+  <input value="Как подключить VPN?" />
+</div>
+<div class="field">
+  <label>With button</label>
+  <div class="row">
+    <input placeholder="Введите email" />
+    <button>Отправить</button>
+  </div>
+</div>
+</body></html>

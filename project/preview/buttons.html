@@ -1,0 +1,23 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 28px; background:
+    radial-gradient(600px 400px at 90% -10%, rgba(13,128,144,0.22) 0%, transparent 72%),
+    radial-gradient(500px 400px at -5% 40%, rgba(26,143,168,0.18) 0%, transparent 65%),
+    var(--bg-base); }
+  .row { display: flex; gap: 14px; align-items: center; }
+  .cta { display:inline-flex; align-items:center; justify-content:center; border-radius:999px; padding:14px 22px; font-family:var(--font-display); font-size:12.5px; font-weight:600; background: linear-gradient(135deg,#1a8fa8,#0d6878); color:#e0f4ff; border:1px solid rgba(64,224,208,0.3); box-shadow: 0 12px 32px rgba(13,128,144,0.3); cursor:pointer; }
+  .cta.hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(64,224,208,0.40); }
+  .cta.ghost { background: rgba(255,255,255,0.05); color: var(--text-main); border:1px solid rgba(255,255,255,0.15); box-shadow: none; }
+  .cta.small { padding: 11px 18px; font-size: 11px; }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 10px; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+</style></head>
+<body>
+<div class="row">
+  <div class="col"><button class="cta">Связаться с нами</button><span class="label">Default</span></div>
+  <div class="col"><button class="cta hover">Связаться с нами</button><span class="label">:hover (−2px, glow)</span></div>
+  <div class="col"><button class="cta ghost">Подробнее</button><span class="label">Ghost</span></div>
+  <div class="col"><button class="cta small">Оплатить</button><span class="label">Small</span></div>
+</div>
+</body></html>

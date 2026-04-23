@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 30px; background: var(--bg-base); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .tok { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .box { width: 96px; height: 64px; background: #0a1826; border: 1px solid rgba(64,224,208,0.10); border-radius: 14px; }
+  .name { font-family: var(--font-display); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-main); }
+  .val { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); text-align: center; max-width: 140px; line-height: 1.4; }
+</style></head>
+<body>
+<div class="grid">
+  <div class="tok"><div class="box" style="box-shadow: 0 6px 14px rgba(4,38,48,0.18)"></div><div class="name">Shadow sm</div><div class="val">0 6 14 / rgba(4,38,48,.18)</div></div>
+  <div class="tok"><div class="box" style="box-shadow: 0 12px 32px rgba(13,128,144,0.30)"></div><div class="name">Shadow md</div><div class="val">0 12 32 / teal .30</div></div>
+  <div class="tok"><div class="box" style="box-shadow: 0 20px 45px rgba(1,4,10,0.60)"></div><div class="name">Shadow lg</div><div class="val">0 20 45 / abyss .60</div></div>
+  <div class="tok"><div class="box" style="box-shadow: 0 0 16px rgba(64,224,208,0.60); border-color: rgba(64,224,208,0.5)"></div><div class="name">Glow accent</div><div class="val">0 0 16 / 40E0D0 .60</div></div>
+</div>
+</body></html>

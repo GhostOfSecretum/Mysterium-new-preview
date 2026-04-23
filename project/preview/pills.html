@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 28px; background:
+    radial-gradient(500px 300px at 70% -10%, rgba(13,128,144,0.22) 0%, transparent 72%),
+    var(--bg-base); }
+  .scene-selector {
+    display: inline-flex;
+    gap: 4px;
+    padding: 8px;
+    border-radius: 18px;
+    background: rgba(1,8,16,0.88);
+    border: 1px solid rgba(64,224,208,0.08);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 40px rgba(1,4,10,0.7);
+  }
+  .pill {
+    display: flex; align-items: center; gap: 7px;
+    padding: 6px 12px; border-radius: 10px;
+    border: 1px solid transparent; background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-display); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.04em; cursor: pointer;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 999px; background: currentColor; opacity: 0.4; }
+  .pill.active { background: rgba(64,224,208,0.10); border-color: rgba(64,224,208,0.25); color: var(--accent); }
+  .pill.active .dot { opacity: 1; box-shadow: 0 0 10px rgba(64,224,208,0.6); }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); margin-top: 12px; display:block; }
+</style></head>
+<body>
+<div class="scene-selector">
+  <button class="pill"><span class="dot"></span>МАТРИЦА</button>
+  <button class="pill active"><span class="dot"></span>ХРОМ</button>
+  <button class="pill"><span class="dot"></span>РИППЛ</button>
+  <button class="pill"><span class="dot"></span>ПОТОКИ</button>
+</div>
+<span class="label">Scene selector — segmented pill nav with active glow dot</span>
+</body></html>

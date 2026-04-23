@@ -1,0 +1,214 @@
+/* ============================================================
+   Mysterium Tech — Colors & Type
+   Cool deep-teal on near-black, tech/security/cyber aesthetic.
+   Webfonts: Unbounded (display), Manrope (body), JetBrains Mono (code).
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* ---------- Surface / background ---------- */
+  --bg-base:        #010810;   /* Abyss — primary canvas */
+  --bg-soft:        #061828;   /* Deep — raised surface */
+  --bg-panel:       #0a1826;   /* Card fill (opaque) */
+  --bg-elevated:    #0f2334;   /* Hover/active raised */
+
+  /* ---------- Glass surfaces ---------- */
+  --glass:          rgba(2, 10, 24, 0.62);
+  --glass-strong:   rgba(2, 10, 24, 0.90);
+  --glass-light:    rgba(64, 224, 208, 0.04);
+
+  /* ---------- Text ---------- */
+  --text-main:      #d8eaf4;   /* Primary body / headings */
+  --text-high:      #ffffff;   /* Emphatic */
+  --text-muted:     #6ba8c8;   /* Secondary, captions */
+  --text-dim:       #3d6a82;   /* Tertiary, placeholder */
+
+  /* ---------- Brand accents ---------- */
+  --accent:         #40e0d0;   /* Turquoise — primary brand */
+  --accent-2:       #1a8fa8;   /* Deep teal — buttons */
+  --accent-3:       #0d6878;   /* Deep teal shadow */
+  --accent-glow:    rgba(64, 224, 208, 0.6);
+  --accent-warm:    #d4a843;   /* Rare warm highlight */
+
+  /* ---------- Lines, borders ---------- */
+  --line:           rgba(64, 224, 208, 0.10);
+  --line-strong:    rgba(64, 224, 208, 0.25);
+  --line-dim:       rgba(64, 224, 208, 0.05);
+  --line-white:     rgba(255, 255, 255, 0.08);
+
+  /* ---------- Semantic ---------- */
+  --success:        #40e0d0;
+  --info:           #5fb3d9;
+  --warn:           #d4a843;
+  --danger:         #ff6b6b;
+
+  /* ---------- Fonts ---------- */
+  --font-display:   "Unbounded", ui-sans-serif, system-ui, sans-serif;
+  --font-body:      "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:      "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---------- Type scale (fluid) ---------- */
+  --fs-display:     clamp(2.5rem, 5vw, 4rem);    /* 40 → 64 */
+  --fs-h1:          clamp(2rem, 4.3vw, 4rem);    /* 32 → 64 */
+  --fs-h2:          clamp(1.5rem, 3vw, 2.5rem);  /* 24 → 40 */
+  --fs-h3:          clamp(1.1rem, 1.8vw, 1.375rem); /* 17.6 → 22 */
+  --fs-h4:          1.05rem;                      /* 16.8 */
+  --fs-body:        1rem;                         /* 16 */
+  --fs-body-sm:     0.9rem;                       /* 14.4 */
+  --fs-caption:     0.78rem;                      /* 12.5 */
+  --fs-eyebrow:     0.72rem;                      /* 11.5 */
+  --fs-micro:       0.64rem;                      /* 10.2 — pill labels */
+
+  --lh-tight:       1.08;
+  --lh-heading:     1.15;
+  --lh-body:        1.65;
+  --lh-relaxed:     1.75;
+
+  --tracking-eyebrow: 0.08em;
+  --tracking-micro:   0.04em;
+  --tracking-label:   0.01em;
+
+  /* ---------- Radii ---------- */
+  --r-xs:   8px;
+  --r-sm:   10px;
+  --r-md:   14px;
+  --r-lg:   18px;
+  --r-xl:   24px;
+  --r-2xl:  32px;
+  --r-pill: 999px;
+
+  /* ---------- Spacing ---------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 44px;
+  --sp-12: 56px;
+  --sp-16: 80px;
+
+  /* ---------- Shadows / glows ---------- */
+  --shadow-sm:   0 6px 14px rgba(4, 38, 48, 0.18);
+  --shadow-md:   0 12px 32px rgba(13, 128, 144, 0.30);
+  --shadow-lg:   0 20px 45px rgba(1, 4, 10, 0.60);
+  --shadow-xl:   0 22px 46px rgba(0, 0, 0, 0.50);
+  --glow-accent: 0 0 16px rgba(64, 224, 208, 0.60);
+  --glow-soft:   0 0 24px rgba(64, 224, 208, 0.25);
+
+  /* ---------- Blur ---------- */
+  --blur-sm:   blur(8px);
+  --blur-md:   blur(14px);
+  --blur-lg:   blur(20px);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    0.2s;
+  --dur-med:     0.3s;
+  --dur-slow:    0.7s;
+}
+
+/* ============================================================
+   Base elements (use as starting point in any HTML)
+   ============================================================ */
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-main);
+  background:
+    radial-gradient(1200px 700px at 90% -10%, rgba(13, 128, 144, 0.15) 0%, transparent 72%),
+    radial-gradient(800px 600px at -5% 40%, rgba(26, 143, 168, 0.12) 0%, transparent 65%),
+    var(--bg-base);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--text-main);
+  line-height: var(--lh-heading);
+  font-weight: 600;
+}
+
+h1 { font-size: var(--fs-h1); line-height: var(--lh-tight); max-width: 820px; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+
+p { margin: 0; color: var(--text-main); }
+.muted { color: var(--text-muted); }
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--accent);
+  margin: 0;
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--text-high); }
+
+/* ============================================================
+   Semantic helpers
+   ============================================================ */
+
+.brand-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  box-shadow: var(--glow-accent);
+}
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+  border-radius: var(--r-xl);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-pill);
+  padding: 14px 22px;
+  font-family: var(--font-display);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+  color: #e0f4ff;
+  border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) var(--ease-out);
+  cursor: pointer;
+}
+.cta:hover { transform: translateY(-2px); box-shadow: 0 16px 36px var(--accent-glow); }
+
+.cta--ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--line-white);
+  box-shadow: none;
+}
+.cta--ghost:hover { background: rgba(255, 255, 255, 0.10); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3); }
